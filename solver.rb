@@ -3,4 +3,4 @@ require 'textcaptcha'
 
 
 solver = TextCaptcha.new
-puts solver.solve("What is Susan's name?")
+puts solver.solve("Ant, snake and eye: how many body parts in the list?")
