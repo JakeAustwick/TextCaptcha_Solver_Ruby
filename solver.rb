@@ -3,4 +3,4 @@ require 'textcaptcha'
 
 
 solver = TextCaptcha.new
-puts solver.solve("Ant, snake and eye: how many body parts in the list?")
+puts solver.solve("What is the 7th digit in 7911863")
