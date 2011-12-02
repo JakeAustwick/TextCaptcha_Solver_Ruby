@@ -16,8 +16,7 @@ class ColorPattern
 	                '10th' => 10, 'tenth' => 10
 	            }
 
-
-	    tokens = question.gsub!(/[^\w\d\s]/,"").downcase.split
+		tokens = question.gsub(/[^\w\d\s]/,"").downcase.split
 	    found = []
 	    which = -1
 	    answer = nil

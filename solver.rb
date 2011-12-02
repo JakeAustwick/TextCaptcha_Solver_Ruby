@@ -3,4 +3,4 @@ require 'textcaptcha'
 
 
 solver = TextCaptcha.new
-puts solver.solve("The pink church is what colour?")
+puts solver.solve("What is Susan's name?")

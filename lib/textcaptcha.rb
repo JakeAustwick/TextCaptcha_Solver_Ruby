@@ -1,4 +1,6 @@
 require 'solvers/colorpattern'
+require 'solvers/namepattern'
+
 
 class TextCaptcha
 
@@ -7,7 +9,7 @@ class TextCaptcha
     answer = nil
 
     answer = ColorPattern.new.solve(question) if answer == nil
-    answer = NamePattern.solve(question) if answer == nil
+    answer = NamePattern.new.solve(question) if answer == nil
     answer = BodyPartsPattern.solve(question) if answer == nil
     answer = DigitPattern.solve(question) if answer == nil
     answer = AddSubtractPattern.solve(question) if answer == nil
