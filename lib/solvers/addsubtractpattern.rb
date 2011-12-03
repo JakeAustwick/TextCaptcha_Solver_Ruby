@@ -1,4 +1,4 @@
-class ColorPattern
+class AddSubtractPattern
 	
 	def solve(question)
 
@@ -21,24 +21,26 @@ class ColorPattern
 	    operators = ["+", "plus", "add", "-", "minus", "subtract"]
 	    operator = [nil,nil]
 
-	   	for i in (0..tokens.size)
-	   		if operators.include?(tokens[i])
-	   			operator = [tokens[i],i]
-	   			break
-	   		end
-	   	end
-		
-		tokens[operator[1] - 1] = ordinals[tokens[operator[1] - 1]] if ordinals.include?(tokens[operator[1] - 1])
-		tokens[operator[1] + 1] = ordinals[tokens[operator[1] + 1]] if ordinals.include?(tokens[operator[1] + 1])
+	    if tokens.include?("+") || tokens.include?("plus") || tokens.include?("add") || tokens.include?("-") || tokens.include?("minus") || tokens.include?("subtract")
+		   	for i in (0..tokens.size)
+		   		if operators.include?(tokens[i])
+		   			operator = [tokens[i],i]
+		   			break
+		   		end
+		   	end
+			
+			tokens[operator[1] - 1] = ordinals[tokens[operator[1] - 1]] if ordinals.include?(tokens[operator[1] - 1])
+			tokens[operator[1] + 1] = ordinals[tokens[operator[1] + 1]] if ordinals.include?(tokens[operator[1] + 1])
 
-	   	if operator[0] == "+" || operator[0] == "plus" || operator[0] == "add"
+		   	if operator[0] == "+" || operator[0] == "plus" || operator[0] == "add"
 
-	   		answer = tokens[operator[1] - 1].to_i + tokens[operator[1] + 1].to_i
+		   		answer = tokens[operator[1] - 1].to_i + tokens[operator[1] + 1].to_i
 
-	   	elsif operator[0] == "-" || operator[0] == "minus" || operator[0] == "subtract"
-	   		
-	   		answer = tokens[operator[1] - 1].to_i - tokens[operator[1] + 1].to_i
-	   	end
+		   	elsif operator[0] == "-" || operator[0] == "minus" || operator[0] == "subtract"
+		   		
+		   		answer = tokens[operator[1] - 1].to_i - tokens[operator[1] + 1].to_i
+		   	end
+		end
 
 	   	answer
 	end
