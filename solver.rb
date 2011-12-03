@@ -1,4 +1,4 @@
-require 'textcaptcha'
+require 'textcaptchasolver'
 
 solver = TextCaptcha.new
 puts solver.solve("Of the numbers one hundred, eighty one, sixty one, 99, 51 or forty seven, which is the smallest?")
