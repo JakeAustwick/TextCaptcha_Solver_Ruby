@@ -22,6 +22,10 @@ class WhichNumberPattern
 		                    'fifty' => 50, 'sixty' => 60, 'seventy' => 70, 
 		                    'eighty' => 80, 'ninety' => 90
 		}
+
+		multipliers = {
+			'thousand' => 1000, 'million' => 1000000, 'hundred' => 100
+		}
 		ordinals =  {
 		                '1st' => 1, 'first' => 1,
 		                '2nd' => 2, 'second' => 2,
@@ -49,6 +53,7 @@ class WhichNumberPattern
 				elsif single_numbers.include?(tokens[i])
 					if single_numbers[tokens[i]] == 100 && i != 0 && single_numbers.include?(tokens[i - 1])
 						found << (single_numbers[tokens[i-1]] * 100)
+						found.delete_at(-2)
 					else
 						found << (single_numbers[tokens[i]])
 					end
