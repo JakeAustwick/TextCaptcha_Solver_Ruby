@@ -3,4 +3,4 @@ require 'textcaptcha'
 
 
 solver = TextCaptcha.new
-puts solver.solve("What is the 7th digit in 7911863")
+puts solver.solve("What is sixty plus 1")

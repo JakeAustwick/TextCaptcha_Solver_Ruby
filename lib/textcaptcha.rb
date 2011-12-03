@@ -2,6 +2,7 @@ require 'solvers/colorpattern'
 require 'solvers/namepattern'
 require 'solvers/bodypartspattern'
 require 'solvers/digitpattern'
+require 'solvers/addsubtractpattern'
 
 
 class TextCaptcha
@@ -14,10 +15,10 @@ class TextCaptcha
     answer = NamePattern.new.solve(question) if answer == nil
     answer = BodyPartsPattern.new.solve(question) if answer == nil
     answer = DigitPattern.new.solve(question) if answer == nil
-    answer = AddSubtractPattern.solve(question) if answer == nil
-    answer = WhichNumberPattern.solve(question) if answer == nil
-    answer = WordsToNumberPattern.solve(question) if answer == nil
-    answer = DayPattern.solve(question) if answer == nil
+    answer = AddSubtractPattern.new.solve(question) if answer == nil
+    answer = WhichNumberPattern.new.solve(question) if answer == nil
+    answer = WordsToNumberPattern.new.solve(question) if answer == nil
+    answer = DayPattern.new.solve(question) if answer == nil
 
     answer
     end
