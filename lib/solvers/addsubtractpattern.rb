@@ -41,7 +41,6 @@ class AddSubtractPattern
 		   		answer = tokens[operator[1] - 1].to_i - tokens[operator[1] + 1].to_i
 		   	end
 		end
-
 	   	answer
 	end
 
