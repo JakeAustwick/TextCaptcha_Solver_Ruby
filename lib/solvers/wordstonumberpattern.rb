@@ -26,17 +26,23 @@ class WordsToNumberPattern
 
 
 		tokens = question.gsub(/[^\w\d\s]/,"").downcase.split
-		if tokens.include?("digits") && tokens.include?("number")
+		if tokens.include?("digits") || tokens.include?("number")
 			nums = []
 
 			for i in (0..tokens.size)
-				if numbers.include?(tokens[i]) && !multipliers.include?(tokens[i+1])
+				if numbers.include?(tokens[i]) && !multipliers.include?(tokens[i+1]) && !multipliers.include?(tokens[i+2])
 					nums << numbers[tokens[i]]
+
+				elsif numbers.include?(tokens[i]) && !multipliers.include?(tokens[i+1]) && multipliers.include?(tokens[i+2])
+					temp = numbers[tokens[i]] + numbers[tokens[i+1]]
+					temp = temp * multipliers[tokens[i+2]]
+					tokens[i+1] = ""
+					tokens[i+1] = ""
+					nums << temp
 				elsif numbers.include?(tokens[i]) && multipliers.include?(tokens[i+1])
 					nums << (numbers[tokens[i]] * multipliers[tokens[i+1]])
 				end
 			end
-
 			answer = nums.inject(:+)
 		end
 		answer
