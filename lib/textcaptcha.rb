@@ -5,6 +5,8 @@ require 'solvers/digitpattern'
 require 'solvers/addsubtractpattern'
 require 'solvers/whichnumberpattern'
 require 'solvers/wordstonumberpattern'
+require 'solvers/daypattern'
+
 
 
 
@@ -21,7 +23,7 @@ class TextCaptcha
     answer = AddSubtractPattern.new.solve(question) if answer == nil
     answer = WhichNumberPattern.new.solve(question) if answer == nil
     answer = WordsToNumberPattern.new.solve(question) if answer == nil
-    #answer = DayPattern.new.solve(question) if answer == nil
+    answer = DayPattern.new.solve(question) if answer == nil
 
     answer
     end
