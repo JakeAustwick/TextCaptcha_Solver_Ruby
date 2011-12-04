@@ -37,7 +37,6 @@ class WordsToNumberPattern
 					temp = numbers[tokens[i]] + numbers[tokens[i+1]]
 					temp = temp * multipliers[tokens[i+2]]
 					tokens[i+1] = ""
-					tokens[i+1] = ""
 					nums << temp
 				elsif numbers.include?(tokens[i]) && multipliers.include?(tokens[i+1])
 					nums << (numbers[tokens[i]] * multipliers[tokens[i+1]])
